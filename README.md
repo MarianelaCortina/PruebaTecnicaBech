@@ -1,20 +1,19 @@
-﻿# 📘 Prueba Técnica Bechsud - API Posts & Comments
+﻿# Prueba Técnica - Backend .NET Core
 
-Este proyecto es una API RESTful construida en **ASP.NET Core** para gestionar publicaciones (Posts) y sus comentarios (Comments), como parte de una prueba técnica.
+Este proyecto fue preparado como **base para la evaluación técnica** solicitada. Contiene la estructura inicial de una Web API desarrollada con ASP.NET Core y Entity Framework Core.
 
-## 🚀 Tecnologías utilizadas
+## ✅ Estado actual
 
-- ASP.NET Core 6 o superior
-- Entity Framework Core (Code First)
-- SQL Server / LocalDB
-- Swagger (documentación y testeo)
+- Proyecto creado y configurado correctamente.
+- Configuración de Entity Framework Core lista para nuevas entidades.
+- Carpetas organizadas (`Controllers`, `Models`, `DTOs`, `Data`).
+- Entidades de ejemplo (`Post` y `Comment`) fueron eliminadas para dejar espacio a las nuevas entidades que serán provistas durante la evaluación.
 
-## 📂 Estructura general
+## 🔧 Requisitos
 
-- **Models:** Entidades `Post` y `Comment`
-- **DTOs:** `PostDTO` para creación/edición
-- **Controllers:** `PostsController` con endpoints CRUD
-- **Data:** `AppDbContext` como DbContext principal
+- .NET SDK 8+
+- SQL Server (local o remoto)
+
 
 ## 🔧 Cómo ejecutar el proyecto
 
@@ -39,22 +38,21 @@ Este proyecto es una API RESTful construida en **ASP.NET Core** para gestionar p
    ```bash
    https://localhost:{puerto}/swagger
 
-📮 Endpoints disponibles
-GET /api/posts → Lista todos los posts
+##  Estructura del proyecto
+css
+Copiar
+Editar
+/Controllers       → Controladores de la API
+/Models            → Entidades del dominio
+/DTOs              → Modelos para transferencia de datos
+/Data              → DbContext y configuración EF Core
+/Migrations        → Se generarán al agregar nuevas entidades
 
-GET /api/posts/{id} → Obtiene un post por ID
+##  Notas
+Se utilizó dotnet new gitignore para evitar subir archivos innecesarios (bin, obj, .user, etc.).
 
-POST /api/posts → Crea un nuevo post
+Se eliminó código de prueba para comenzar con una base limpia.
 
-PUT /api/posts/{id} → Actualiza un post
+El proyecto está listo para recibir nuevas entidades, crear migraciones y trabajar sobre endpoints reales.
 
-DELETE /api/posts/{id} → Elimina un post
-
-POST /api/posts/test → Endpoint de prueba (no guarda en la base)
-
-📝 Notas
-Esta es una versión simplificada pensada para una prueba técnica.
-
-No incluye autenticación ni autorización.
-
-Listo para escalar con otras entidades como User, Category, etc.
+Hecho con 💻 por Marianela.
