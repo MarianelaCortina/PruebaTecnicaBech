@@ -38,7 +38,7 @@ namespace PruebaTecnicaBech.Controllers
             return component;
         }
 
-        [HttpPost("createMachine")]
+        [HttpPost("createComponent")]
         public async Task<ActionResult<Component>> CreateComponent(int machineId, [FromBody] ComponentDTO dto)
         {
             var machine = await _context.Machines.FindAsync(machineId);
@@ -61,7 +61,7 @@ namespace PruebaTecnicaBech.Controllers
             return CreatedAtAction(nameof(GetComponent), new { machineId = machineId, id = component.Id }, component);
         }
 
-        [HttpPut("updateMachine/{id}")]
+        [HttpPut("updateComponent/{id}")]
         public async Task<IActionResult> UpdateComponent(int machineId, int id, [FromBody] ComponentDTO                   dto)
         {
             var component = await _context.Components
@@ -80,7 +80,7 @@ namespace PruebaTecnicaBech.Controllers
             return NoContent();
         }
 
-        [HttpDelete("deleteMachine/{id}")]
+        [HttpDelete("deleteComponent/{id}")]
         public async Task<IActionResult> DeleteComponent(int machineId, int id)
         {
             var component = await _context.Components
